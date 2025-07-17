@@ -1,0 +1,13 @@
+.icones {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.icone {
+    width: 10px;
+}
+
+.icone:hover {
+    cursor: pointer;
+}
