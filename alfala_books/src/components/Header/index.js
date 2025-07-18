@@ -1,8 +1,9 @@
-import LogoHeader from '../LogoHeader';
-import OptionsHeader from '../OptionsHeader';
-import IconesHeader from '../IconesHeader';
 
-import styled from 'styled-components';
+import Logo from "../Logo";
+import OptionsHeader from "../OptionsHeader";
+import IconesHeader from "../IconesHeader";
+import styled from 'styled-components'
+
 
 const HeaderContainer = styled.header`
     background-color: #FFF;
@@ -10,18 +11,18 @@ const HeaderContainer = styled.header`
     justify-content: center;
 `
 
+
+
 function Header() {
     return (
         <header className="App-header">
-
-            <HeaderContainer>
-                <LogoHeader />
+            <HeaderContainer >
+                <Logo />
                 <OptionsHeader />
                 <IconesHeader />
             </HeaderContainer>
-
         </header>
     )
 }
 
-export default Header;
+export default Header
