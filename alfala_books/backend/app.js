@@ -1,13 +1,15 @@
-import express from 'express';
+import express from 'express'
 import routerLivros from './routes/livrosRouter.js'
 
-const app = express();
+const app = express()
 app.use(express.json())
 
-const port = 8000;
+const port = 8000
 
+
+// Montagem da rota livro 
 app.use('/livros', routerLivros);
 
 app.listen(port, () => {
-    console.log(`Servidor on-line na porta ${port}`);
+    console.log(`Escutando a porta ${port}`)
 })

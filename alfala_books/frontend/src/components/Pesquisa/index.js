@@ -1,7 +1,7 @@
 import Input from "../Input";
-import styled from "styled-components";
+import styled from "styled-components"
 import { useState } from "react";
-import { livros } from "./dadosPesquisa";
+import { livros } from './dadosPesquisa'
 
 const PesquisaContainer = styled.section`
     background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
@@ -34,38 +34,31 @@ const Resultado = styled.div`
    img {
        width: 100px;
    }
-&:hover {
+   &:hover {
        border: 1px solid white;
    }
 `
-
 function Pesquisa() {
-    const [livrosPesquisados, setLivrosPesquisados] = useState([]);
-    console.log(livrosPesquisados);
-
+    const [livrosPesquisados, setLivrosPesquisados] = useState([])
+    console.log(livrosPesquisados)
     return (
         <PesquisaContainer>
             <Titulo>Já sabe por onde começar?</Titulo>
-            <Subtitulo>Escontre seu livro em nossa estante</Subtitulo>
+            <Subtitulo>Encontre seu livro em nossa estante</Subtitulo>
             <Input placeholder="Escreva sua próxima leitura"
                 onBlur={evento => {
                     const textoDigitado = evento.target.value
-                    textoDigitado.toLocaleLowerCase()
-                    const resultadoPesquisa = livros.filter(livro => livro.nome.toLocaleLowerCase().includes(textoDigitado))
+                    const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado))
                     setLivrosPesquisados(resultadoPesquisa)
                 }}
             />
-
-            {livrosPesquisados.map((livro) =>  (
-            <Resultado>
-                <p>{livro.nome}</p>
-                <img src={livro.src} alt="Capa do Livro"></img>
-            </Resultado>
+            {livrosPesquisados.map(livro => (
+                <Resultado>
+                    <p>{livro.nome}</p>
+                    <img src={livro.src} />
+                </Resultado>
             ))}
-
-
         </PesquisaContainer>
     )
 }
-
 export default Pesquisa;
